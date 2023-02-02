@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela inicial</title>
+    <link rel="stylesheet" href="style.01.css">
+    <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="circles.css">
+
+    <link rel="shortcut icon" href="Imagens/FAVICON.png" type="image/x-icon">
+
+
+
+
+
+</head>
+
+<body>
+
+    <div class="logos">
+        <h1 class="logo">Randomizer 2.0</h1>
+    </div>
+
+
+
+
+
+    <section>
+        <div class="header1">
+            E aí, tá afim de jogar o quê?
+        </div>
+        <form>
+            <div>
+                <input type="text" id="Jogo1" placeholder="Jogo 1" autocomplete="off">
+            </div>
+            <div>
+                <input type="text" id="Jogo2" placeholder="Jogo 2" autocomplete="off">
+            </div>
+            <div>
+                <input type="text" id="Jogo3" placeholder="Jogo 3" autocomplete="off">
+            </div>
+            <div>
+                <input type="text" id="Jogo4" placeholder="Jogo 4" autocomplete="off">
+            </div>
+        </form>
+        <p id="thisgame"></p>
+    </section>
+
+    <div id="qual-jogo">
+        <button class="btnn">Qual jogo?</button>
+    </div>
+
+    <button type="button" id="clear-button">Clear All</button>
+
+
+
+
+
+
+    <div class="main-area">
+        <div class="circles">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+    <script>
+        var btn = document.querySelector(".btnn");
+        btn.addEventListener("click", function () {
+            var Jog1 = document.getElementById("Jogo1")
+            var Jog2 = document.getElementById("Jogo2")
+            var Jog3 = document.getElementById("Jogo3")
+            var Jog4 = document.getElementById("Jogo4")
+            var este = document.getElementById("thisgame")
+            var infoArray = [Jog1.value, Jog2.value, Jog3.value, Jog4.value];
+            var randomInfo = infoArray[Math.floor(Math.random() * infoArray.length)];
+            este.textContent = " Que tal: " + randomInfo;
+        });
+    </script>
+
+    <script>
+        const clearButton = document.getElementById("clear-button");
+        const inputs = document.querySelectorAll("form input");
+
+        clearButton.addEventListener("click", function () {
+            inputs.forEach(function (input) {
+                input.value = "";
+            });
+        });
+    </script>
+
+    <audio src="Audio/The Godfather Theme Song.mp3" autoplay loop volume:"0.5"></audio> 
+
+
+
+
+
+
+
+</body>
+
+</html>
